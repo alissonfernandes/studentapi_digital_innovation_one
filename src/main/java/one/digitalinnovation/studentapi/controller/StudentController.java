@@ -1,6 +1,7 @@
 package one.digitalinnovation.studentapi.controller;
 
-import one.digitalinnovation.studentapi.entity.Student;
+import javax.validation.Valid;
+import one.digitalinnovation.studentapi.dto.request.StudentDTO;
 import one.digitalinnovation.studentapi.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -25,8 +26,8 @@ public class StudentController {
    
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public void createStudent(@RequestBody Student student){
-        studentService.createStudent(student);
+    public void createStudent(@RequestBody @Valid StudentDTO studentDTO){
+        studentService.createStudent(studentDTO);
     }
     
     
