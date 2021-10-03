@@ -2,6 +2,8 @@ package one.digitalinnovation.studentapi.service;
 
 // camada regra de negocio
 
+import java.util.List;
+import java.util.stream.Collectors;
 import one.digitalinnovation.studentapi.dto.request.StudentDTO;
 import one.digitalinnovation.studentapi.entity.Student;
 import one.digitalinnovation.studentapi.mapper.StudentMapper;
@@ -27,5 +29,12 @@ public class StudentService {
         // convert studentDTO to studentModel
         Student studentToSave = studentMapper.toModel(studentDTO);
         studentRepository.save(studentToSave);
+    }
+    
+    public List<StudentDTO> listAll(){
+        List<Student> allStudent = studentRepository.findAll();
+        return allStudent.stream()
+                .map(student -> studentMapper.toDTO(student))
+                .collect(Collectors.toList());
     }
 }
