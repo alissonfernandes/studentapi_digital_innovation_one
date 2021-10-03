@@ -3,7 +3,6 @@ package one.digitalinnovation.studentapi.service;
 // camada regra de negocio
 
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
 import one.digitalinnovation.studentapi.dto.request.StudentDTO;
 import one.digitalinnovation.studentapi.entity.Student;
@@ -48,6 +47,12 @@ public class StudentService {
     public void deleteById(Long id) throws StudentNotFoundException {
         verifyIfExists(id);
         studentRepository.deleteById(id);
+    }
+    
+    public void updateById(Long id, StudentDTO studentDTO) throws StudentNotFoundException{
+        verifyIfExists(id);
+        Student studentToUpdate = studentMapper.toModel(studentDTO);
+        studentRepository.save(studentToUpdate);
     }
     
     private Student verifyIfExists(Long id) throws StudentNotFoundException{
