@@ -7,6 +7,7 @@ import one.digitalinnovation.studentapi.exception.StudentNotFoundException;
 import one.digitalinnovation.studentapi.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -43,5 +44,11 @@ public class StudentController {
     @GetMapping("/{id}")
     public StudentDTO findById(@PathVariable Long id) throws StudentNotFoundException{
         return studentService.findById(id);
+    }
+    
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void deleteById(@PathVariable Long id) throws StudentNotFoundException{
+        studentService.deleteById(id);
     }
 }
