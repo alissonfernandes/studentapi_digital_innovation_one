@@ -4,6 +4,7 @@ package one.digitalinnovation.studentapi.service;
 
 import java.util.List;
 import java.util.stream.Collectors;
+import lombok.AllArgsConstructor;
 import one.digitalinnovation.studentapi.dto.request.StudentDTO;
 import one.digitalinnovation.studentapi.entity.Student;
 import one.digitalinnovation.studentapi.exception.StudentNotFoundException;
@@ -14,6 +15,7 @@ import org.springframework.stereotype.Service;
 
 
 @Service
+@AllArgsConstructor(onConstructor = @__(@Autowired))
 public class StudentService {
     
     private StudentRepository studentRepository;
@@ -21,11 +23,6 @@ public class StudentService {
     
     private final StudentMapper studentMapper = StudentMapper.INSTANCE;
     
-    @Autowired
-    public StudentService(StudentRepository studentRepository){
-        this.studentRepository = studentRepository;
-    }
-            
     public void createStudent(StudentDTO studentDTO){
         // convert studentDTO to studentModel
         Student studentToSave = studentMapper.toModel(studentDTO);
