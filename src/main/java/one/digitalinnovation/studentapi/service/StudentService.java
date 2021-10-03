@@ -3,9 +3,11 @@ package one.digitalinnovation.studentapi.service;
 // camada regra de negocio
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 import one.digitalinnovation.studentapi.dto.request.StudentDTO;
 import one.digitalinnovation.studentapi.entity.Student;
+import one.digitalinnovation.studentapi.exception.StudentNotFoundException;
 import one.digitalinnovation.studentapi.mapper.StudentMapper;
 import one.digitalinnovation.studentapi.repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,4 +39,11 @@ public class StudentService {
                 .map(student -> studentMapper.toDTO(student))
                 .collect(Collectors.toList());
     }
+    
+    public StudentDTO findById(Long id) throws StudentNotFoundException{
+        Student student = studentRepository.findById(id)
+                 .orElseThrow(() -> new StudentNotFoundException(id));
+        return studentMapper.toDTO(student);
+    }
+
 }
