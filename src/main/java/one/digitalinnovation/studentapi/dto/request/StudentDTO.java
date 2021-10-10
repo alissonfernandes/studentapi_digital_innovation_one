@@ -8,6 +8,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import one.digitalinnovation.studentapi.entity.Address;
 import org.hibernate.validator.constraints.br.CPF;
 
 @Data
@@ -35,4 +36,8 @@ public class StudentDTO {
     @Valid
     @NotEmpty
     private List<PhoneDTO> phones;
+    
+    @Valid
+    @NotEmpty
+    private List<AddressDTO> address;
 }
