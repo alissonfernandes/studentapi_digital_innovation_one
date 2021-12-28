@@ -15,5 +15,6 @@ public interface StudentMapper {
     @Mapping(target = "birthDate", source = "birthDate", dateFormat = "dd-MM-yyyy")
     Student toModel(StudentDTO studentDTO);
     
+    @Mapping(target = "birthDate", source = "birthDate", dateFormat = "dd-MM-yyyy")
     StudentDTO toDTO(Student student);
 }
