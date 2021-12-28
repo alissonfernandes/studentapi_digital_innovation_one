@@ -29,8 +29,8 @@ public class StudentController {
     
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public void createStudent(@RequestBody @Valid StudentDTO studentDTO){
-        studentService.createStudent(studentDTO);
+    public StudentDTO createStudent(@RequestBody @Valid StudentDTO studentDTO){
+        return studentService.createStudent(studentDTO);
     }
     
     @GetMapping

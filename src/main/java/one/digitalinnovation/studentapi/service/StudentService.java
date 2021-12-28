@@ -22,10 +22,11 @@ public class StudentService {
     
     private final StudentMapper studentMapper = StudentMapper.INSTANCE;
     
-    public void createStudent(StudentDTO studentDTO){
+    public StudentDTO createStudent(StudentDTO studentDTO){
         // convert studentDTO to studentModel
         Student studentToSave = studentMapper.toModel(studentDTO);
-        studentRepository.save(studentToSave);
+        Student student = studentRepository.save(studentToSave);
+        return studentMapper.toDTO(student);
     }
     
     public List<StudentDTO> listAll(){
