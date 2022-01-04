@@ -13,4 +13,12 @@ Site do [Projeto Lombok](https://projectlombok.org/features/all)
 ## DAO - Data Access Object
  DAO (Data Access Object ou Objeto de acesso a dados) é um padrão para aplicações que utilizam persistência de dados, onde tem a separação das regras de negócio das regras de acesso a banco de dados, implementada com linguagens de programação orientadas a objetos (como por exemplo Java) e arquitetura MVC. Basicamente o DAO atua como um intermediário entre a aplicação e o banco de dados.
 
-
+ ## Verbos HTTP
+É um um conjunto de métodos de requisição responsáveis por indicar a ação a ser executada para um dado recurso. Embora esses métodos possam ser descritos como substantivos, eles também são comumente referenciados como HTTP Verbs (Verbos HTTP).
+### Principais verbos HTTP
+|Verbo|Ação|
+|---|---|
+|POST| é utilizado para submeter uma entidade a um recurso específico, frequentemente causando uma mudança no estado do recurso ou efeitos colaterais no servidor|
+|GET| solicita a representação de um recurso específico. Requisições utilizando o método GET devem retornar apenas dados|
+|PUT| substitui todas as atuais representações do recurso de destino pela carga de dados da requisição|
+|DELETE| O método DELETE remove um recurso específico|
