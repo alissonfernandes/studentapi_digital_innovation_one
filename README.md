@@ -10,4 +10,7 @@ por meio de anotações adicionadas ao nosso código, ensinamos o compilador (ma
 
 Site do [Projeto Lombok](https://projectlombok.org/features/all)
 
+## DAO - Data Access Object
+ DAO (Data Access Object ou Objeto de acesso a dados) é um padrão para aplicações que utilizam persistência de dados, onde tem a separação das regras de negócio das regras de acesso a banco de dados, implementada com linguagens de programação orientadas a objetos (como por exemplo Java) e arquitetura MVC. Basicamente o DAO atua como um intermediário entre a aplicação e o banco de dados.
+
 
