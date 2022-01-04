@@ -22,3 +22,6 @@ Site do [Projeto Lombok](https://projectlombok.org/features/all)
 |GET| solicita a representação de um recurso específico. Requisições utilizando o método GET devem retornar apenas dados|
 |PUT| substitui todas as atuais representações do recurso de destino pela carga de dados da requisição|
 |DELETE| O método DELETE remove um recurso específico|
+
+## Testes Unitários
+[Clique aqui](https://github.com/alissonfernandes/studentapi_digital_innovation_one/tree/master/src/test/java/one/digitalinnovation/studentapi) e veja os testes unitários realizados neste projeto.
